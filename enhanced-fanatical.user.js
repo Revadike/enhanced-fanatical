@@ -3,7 +3,7 @@
 // @namespace    EnhancedFanatical
 // @version      1.0.0
 // @description  Userscript that highlights owned packages on Fanatical.com bundles
-// @author       You
+// @author       Raymond Law - https://github.com/raymondlaw
 // @match        https://www.fanatical.com/*
 // @grant        GM.xmlHttpRequest
 // @run-at       document.idle
