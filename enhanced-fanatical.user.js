@@ -7,28 +7,22 @@
 // @match        https://www.fanatical.com/*
 // @grant        GM.xmlHttpRequest
 // @run-at       document.idle
-
 // ==/UserScript==
-
 let user_packages = [];
-
 (function() {
 	'use strict';
-	
 	(function(history){
 		var pushState = history.pushState;
 		history.pushState = function(state) {
-		if (typeof history.onpushstate == "function") {
-			history.onpushstate({state: state});
-		}
-		// Perform on each AJAX page change
-		setTimeout(function(){filter_games(user_packages);},1500);
-		
-		return pushState.apply(history, arguments);
-	};
+			if (typeof history.onpushstate == "function") {
+				history.onpushstate({state: state});
+			}
+			// Perform on each AJAX page change
+			setTimeout(function(){filter_games(user_packages);},1500);
+			return pushState.apply(history, arguments);
+		};
 	})(window.history);
-	
-    setTimeout(main,2500);
+	setTimeout(main,2500);
 })();
 
 async function main(){
