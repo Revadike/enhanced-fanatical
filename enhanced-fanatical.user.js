@@ -47,7 +47,7 @@ function get_steam_apps(){
     return new Promise(resolve => {
         GM.xmlHttpRequest({
             method: "GET",
-            url: "http://store.steampowered.com/dynamicstore/userdata/",
+            url: "http://store.steampowered.com/dynamicstore/userdata/?t=" + Date.now(),
             responseType: 'json',
             onload: function(response) {
                 let steam_data = JSON.parse(response.responseText);
